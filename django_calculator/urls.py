@@ -20,5 +20,7 @@ from calc_app.views import index_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index_view, name="index")
+    url(r'^$', index_view, name="index"),
+    url(r'(?P<first_value>\d+)(?P<operator>\w)(?P<second_value>\d+)',
+        index_view, name="index")
 ]
